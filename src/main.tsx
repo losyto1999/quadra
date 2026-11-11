@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './quadra.css'
 import './i18n'
+import './portfolio/fromPortfolio'
 import App from './App.tsx'
 
 // Su GitHub Pages l'app vive in un sottopercorso (`/quadra/`): il router lo riceve da Vite.

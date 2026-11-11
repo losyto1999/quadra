@@ -33,6 +33,10 @@
     --q-amber-ink: #8A5300;
 }
 
+/* Demo aperta dal portfolio: <html data-portfolio-back> (vedi portfolio/fromPortfolio.ts). Le classi
+   con back: lasciano spazio alla pillola fissa "torna al portfolio" in alto a sinistra. */
+@custom-variant back (&:where([data-portfolio-back] *));
+
 @theme {
     /* Niente palette di Tailwind: un bg-slate-100 scritto per sbaglio non produce stile. */
     --color-*: initial;
@@ -105,6 +109,18 @@
 @custom-variant small (@media (width < 640px));
 
 /* Freccia della select disegnata in SVG: con appearance: none quella del sistema sparisce. */
+/* Lascia a sinistra lo spazio per la pillola fissa "torna al portfolio" (portfolio/BackToPortfolio.tsx):
+   la pillola, a 16px dal bordo, è larga 88px (66px sotto i 640px) e le si lasciano 20px (18px) di aria.
+   Il margine del contenitore centrato (max 1320px, 32px ai lati, 16px sotto i 640px) si scala, così lo
+   spazio sparisce quando lo schermo è abbastanza largo da tenere la pillola fuori dal contenuto. */
+@utility clear-back-pill {
+    padding-left: max(0px, calc(124px - max(32px, (100vw - 1320px) / 2)));
+
+    @variant small {
+        padding-left: 84px;
+    }
+}
+
 @utility select-chevron {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%231e1b3a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;

@@ -112,6 +112,7 @@ src/
     locale.ts              lingua attiva, locale per Intl, helper per i testi
   locales/
     it.json, en.json       tutti i testi
+  portfolio/               pillola «torna al portfolio», solo per chi arriva da flowsi.it
   pages/                   QuadraOverview, QuadraRevenue, QuadraCosts, QuadraCash, layout.ts
   utils/format.ts          valute, percentuali, giorni, date e mesi nella lingua attiva
   useQuadraData.ts         chiama l'API a ogni cambio di filtri o lingua: dati, skeleton, errore
@@ -121,6 +122,14 @@ public/favicon.webp        icona del sito
 docs/screenshots/          immagini di questo README
 .github/workflows/deploy.yml   pubblicazione automatica su GitHub Pages
 ```
+
+## Arrivo dal portfolio
+
+La demo fa parte del portfolio [flowsi.it](https://flowsi.it), che la apre con il parametro `?from=portfolio`. Solo in quel caso, in alto a sinistra, compare una pillola fissa che riporta al portfolio (`src/portfolio/`). Chi arriva da GitHub o da un link diretto non la vede.
+
+- `fromPortfolio.ts`, importato in `main.tsx` prima del render, salva il segnale nel `sessionStorage` (chiave `portfolio:back`) e toglie `from` dall'URL. Così la pillola resta navigando tra le pagine della scheda, ma un link copiato non la porta con sé. Mette anche l'attributo `data-portfolio-back` su `<html>`.
+- `BackToPortfolio.tsx` è la pillola, con i testi IT/EN al suo interno. Riporta sempre a `https://flowsi.it/#progetti`: l'indirizzo è fisso nel codice e non letto dall'URL, così nessuno può usarla per mandare altrove.
+- Le classi con la variante `back:` (definita nel foglio di stile) valgono solo con quell'attributo: nell'header lasciano spazio alla pillola.
 
 ## Pubblicazione su GitHub Pages
 

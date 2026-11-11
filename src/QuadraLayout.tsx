@@ -1,13 +1,16 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Outlet, useLocation, useNavigationType } from 'react-router-dom'
 import { FilterBar } from './components/FilterBar'
 import { QuadraHeader } from './components/QuadraHeader'
 import { useLocale } from './i18n/locale'
+import { BackToPortfolio } from './portfolio/BackToPortfolio'
+import { cameFromPortfolio } from './portfolio/fromPortfolio'
 
 /** Header e barra dei filtri, comuni a tutte le pagine. */
 export function QuadraLayout() {
     const location = useLocation()
     const navigationType = useNavigationType()
+    const [showBack] = useState(cameFromPortfolio)
     // Header e filtri usano `translate()`: leggere la lingua qui li fa ri-renderizzare quando cambia.
     // Le pagine si aggiornano da sole: useQuadraData ricarica i dati nella lingua nuova.
     useLocale()
@@ -24,6 +27,7 @@ export function QuadraLayout() {
 
     return (
         <div className="quadra-root px-8 py-7 small:px-4">
+            {showBack && <BackToPortfolio />}
             <div className="mx-auto flex max-w-[1320px] flex-col gap-4">
                 <QuadraHeader />
                 <FilterBar />
