@@ -13,12 +13,6 @@ export function LanguageSwitch() {
     function choose(next: Lang) {
         if (next === lang) return
         i18n.changeLanguage(next)
-        // Toglie un eventuale ?lng= dall'URL, altrimenti al ricaricamento avrebbe la precedenza sulla scelta.
-        const url = new URL(window.location.href)
-        if (url.searchParams.has('lng')) {
-            url.searchParams.delete('lng')
-            window.history.replaceState(window.history.state, '', url)
-        }
     }
 
     return (

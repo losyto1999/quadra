@@ -145,7 +145,7 @@ Configurazione, una sola volta: *Settings → Pages → Build and deployment →
 
 ## Lingua
 
-La lingua viene scelta in quest'ordine: il parametro `?lng=it` / `?lng=en` nell'URL, poi la scelta fatta con il selettore (salvata nel `localStorage` alla chiave `quadra:lang`), infine la lingua del browser. Se nessuna corrisponde, il sito è in italiano. Scegliendo dal selettore, un eventuale `?lng=` sparisce dall'URL.
+La lingua viene scelta in quest'ordine: il parametro `?lng=it` / `?lng=en` nell'URL, poi la scelta fatta con il selettore (salvata nel `localStorage` alla chiave `quadra:lang`), infine la lingua del browser. Il parametro `lng`, una volta letto e salvato, viene tolto dall'URL (`src/i18n/index.ts`): l'indirizzo resta pulito e, ricaricando, non ha la precedenza su una scelta fatta poi con il selettore. Se nessuna corrisponde, il sito è in italiano. Scegliendo dal selettore, un eventuale `?lng=` sparisce dall'URL.
 
 I testi stanno in `src/locales/it.json` e `src/locales/en.json` (namespace `quadra`). I due file hanno la stessa struttura di chiavi. Il dataset contiene solo numeri e id: linee, categorie, aree, fasce e KPI hanno l'etichetta alla chiave del loro id. Insight e avvisi sono modelli con segnaposto: l'italiano usa le preposizioni articolate («del 5,6%», «dell'11,7%»), l'inglese la cifra semplice. Valute, numeri, date e nomi dei mesi sono formattati con `Intl`. L'inglese usa `en-GB` con l'euro («€4.30M», «31/10/2026»). Nomi dell'azienda e dei clienti, URL, parametri dei filtri e ancore restano uguali in tutte le lingue.
 

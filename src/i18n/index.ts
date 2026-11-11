@@ -30,4 +30,12 @@ const syncHtmlLang = (lng: string) => {
 syncHtmlLang(i18n.resolvedLanguage ?? 'it')
 i18n.on('languageChanged', syncHtmlLang)
 
+// `?lng=` è già stato letto e salvato nel localStorage: lo si toglie dall'URL, che resta pulito e,
+// ricaricando, non ha la precedenza su una scelta fatta poi con il selettore.
+const url = new URL(window.location.href)
+if (url.searchParams.has('lng')) {
+    url.searchParams.delete('lng')
+    window.history.replaceState(window.history.state, '', url)
+}
+
 export default i18n
