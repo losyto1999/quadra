@@ -1,0 +1,340 @@
+{
+    "header": {
+        "note": "dati dimostrativi",
+        "language": "Lingua"
+    },
+    "pages": {
+        "overview": "Panoramica",
+        "revenue": "Ricavi",
+        "costs": "Costi e margini",
+        "cash": "Cassa"
+    },
+    "nav": {
+        "label": "Sezioni di Quadra"
+    },
+    "periods": {
+        "full": "Anno intero",
+        "h1": "1° semestre",
+        "h2": "2° semestre",
+        "yearToDate": "da inizio anno"
+    },
+    "lines": {
+        "componenti": "Componenti meccanici",
+        "assemblaggi": "Assemblaggi su misura",
+        "assistenza": "Assistenza tecnica"
+    },
+    "categories": {
+        "personale": "Personale",
+        "materie": "Materie prime",
+        "struttura": "Struttura",
+        "logistica": "Logistica",
+        "marketing": "Marketing"
+    },
+    "areas": {
+        "nord": "Nord",
+        "centro": "Centro",
+        "sud": "Sud",
+        "estero": "Estero"
+    },
+    "aging": {
+        "range": "{{from}}–{{to}} giorni",
+        "over": "Oltre {{days}} giorni"
+    },
+    "kpis": {
+        "revenue": "Fatturato",
+        "activeClients": "Clienti attivi",
+        "avgRevenue": "Ricavo medio per cliente",
+        "top3Share": "Quota top {{n}} clienti",
+        "totalCosts": "Costi totali",
+        "grossMargin": "Margine lordo %",
+        "ebitda": "EBITDA",
+        "personnelRatio": "Incidenza costo personale",
+        "liquidity": "Liquidità",
+        "dso": "DSO (giorni)",
+        "dpo": "DPO (giorni)",
+        "overdue": "Crediti scaduti"
+    },
+    "kpiNotes": {
+        "ebitdaShare": "{{pct}} del fatturato",
+        "liquidityNow": "Liquidità attuale",
+        "liquidityAt": "Liquidità al {{date}}"
+    },
+    "kpiCard": {
+        "detail": ". Dettaglio in {{page}}"
+    },
+    "common": {
+        "na": "n.d."
+    },
+    "table": {
+        "total": "Totale"
+    },
+    "counts": {
+        "invoices_one": "{{value}} fattura",
+        "invoices_other": "{{value}} fatture",
+        "overdueInvoices_one": "{{value}} fattura scaduta",
+        "overdueInvoices_other": "{{value}} fatture scadute",
+        "clients_one": "{{value}} cliente",
+        "clients_other": "{{value}} clienti"
+    },
+    "format": {
+        "days_one": "{{value}} giorno",
+        "days_other": "{{value}} giorni",
+        "daysShort": "gg",
+        "delta": {
+            "relative": "del {{value}}",
+            "points": "di {{value}} punti percentuali",
+            "days": "di {{value}}",
+            "count": "di {{value}}"
+        }
+    },
+    "delta": {
+        "noneSr": " (nessun confronto con {{compare}})",
+        "unchanged": "invariato rispetto a {{compare}}",
+        "up": "in aumento",
+        "down": "in calo",
+        "favorable": "favorevole",
+        "unfavorable": "sfavorevole",
+        "spoken": "{{direction}} {{change}} rispetto a {{compare}}, {{tone}}"
+    },
+    "alerts": {
+        "title": "Avvisi",
+        "costTitle": "Avvisi sui costi",
+        "severity": {
+            "critical": "Critico",
+            "warning": "Attenzione",
+            "info": "Da sapere"
+        }
+    },
+    "errors": {
+        "title": "Dati non disponibili",
+        "unavailable": "Non è stato possibile caricare i dati di questa pagina. Riprova tra qualche istante.",
+        "invalidFilters": "I filtri richiesti non sono validi: scegli anno e periodo dalla barra qui sopra.",
+        "retry": "Riprova"
+    },
+    "insight": {
+        "title": "Insight"
+    },
+    "filters": {
+        "label": "Filtri",
+        "year": "Anno",
+        "yearToDate": "{{year}} (da inizio anno)",
+        "period": "Periodo",
+        "notStarted": {
+            "full": "L’anno intero {{year}} non è ancora iniziato",
+            "h1": "Il 1° semestre {{year}} non è ancora iniziato",
+            "h2": "Il 2° semestre {{year}} non è ancora iniziato"
+        },
+        "hint": "Periodo non ancora iniziato: non ci sono mesi chiusi.",
+        "compare": "Confronto con {{label}}",
+        "invalid": {
+            "year": "Nel link l'anno «{{value}}» non è disponibile (dati dal {{from}} al {{to}}): mostro il {{year}}.",
+            "period": "Nel link il periodo «{{value}}» non è disponibile per il {{year}}: mostro l'anno intero.",
+            "dismiss": "Chiudi"
+        }
+    },
+    "donut": {
+        "total": "Totale",
+        "description": "{{subject}}, totale {{total}}: {{items}}"
+    },
+    "cash": {
+        "flows": {
+            "title": "Entrate e uscite mensili",
+            "inflows": "Entrate",
+            "outflows": "Uscite",
+            "net": "Saldo del mese",
+            "inflowsLower": "entrate",
+            "outflowsLower": "uscite",
+            "netLower": "saldo",
+            "description": "Entrate e uscite mensili, {{period}}: entrate {{inflow}}, uscite {{outflow}}, saldo {{net}}. Saldo più basso a {{month}} ({{worst}})."
+        },
+        "forecastHero": {
+            "title": "Liquidità prevista",
+            "titleWithRange": "Liquidità prevista · {{range}}",
+            "low": "minimo previsto",
+            "lowDetail": "minimo previsto, a {{month}} · soglia minima {{threshold}}"
+        },
+        "overdue": {
+            "title": "Fatture scadute",
+            "subtitle": "Al {{date}} · {{count}}",
+            "subtitleLoading": "Al {{date}}",
+            "region": "Fatture scadute, scorribile",
+            "caption": "Fatture scadute al {{date}}, dalla più in ritardo",
+            "client": "Cliente",
+            "number": "N. fattura",
+            "amount": "Importo",
+            "daysLate": "Giorni di ritardo",
+            "due": "Scadenza",
+            "total": "Totale",
+            "empty": "Nessuna fattura scaduta a questa data."
+        },
+        "aging": {
+            "title": "Scadenzario crediti per fasce",
+            "subtitle": "Crediti scaduti al {{date}}, per giorni di ritardo",
+            "description": "Crediti scaduti al {{date}} per giorni di ritardo: {{items}}."
+        }
+    },
+    "costs": {
+        "bubble": {
+            "title": "Fatturato e margine per cliente",
+            "subtitle": "{{period}} · fatturato in scala logaritmica",
+            "legendHigh": "Margine dal {{floor}} in su",
+            "legendLow": "Margine sotto il {{floor}}",
+            "size": "Dimensione: numero di ordini",
+            "revenue": "fatturato",
+            "margin": "margine lordo",
+            "orders": "ordini",
+            "description": "Fatturato e margine lordo di {{count}} clienti, {{period}}. ",
+            "lowList": "Sotto il {{floor}} di margine: {{list}}.",
+            "none": "Nessun cliente sotto il {{floor}} di margine."
+        },
+        "byCategory": {
+            "title": "Costi per categoria",
+            "subtitle": "{{period}} confrontato con {{compare}}",
+            "description": "Costi per categoria, {{period}} contro {{compare}}: {{items}}.",
+            "change": "Variazione {{change}}"
+        },
+        "composition": "Composizione costi",
+        "lineMargin": {
+            "title": "Margine per linea di prodotto",
+            "region": "Margine per linea di prodotto, scorribile",
+            "caption": "Margine lordo per linea di prodotto, {{period}}",
+            "line": "Linea",
+            "revenue": "Fatturato",
+            "directCosts": "Costi diretti",
+            "margin": "Margine %",
+            "footnote": "Margine: dal {{good}} in su buono, tra {{low}} e {{good}} da tenere d'occhio, sotto il {{low}} basso."
+        }
+    },
+    "overview": {
+        "forecast": {
+            "title": "Liquidità prevista",
+            "subtitle": "Prossimi {{months}} mesi · {{range}}",
+            "subtitleLoading": "Prossimi {{months}} mesi",
+            "low": "Minimo previsto a {{month}}:"
+        },
+        "concentration": {
+            "title": "Concentrazione clienti",
+            "others": "Altri clienti",
+            "description": "Quota dei ricavi: {{items}}",
+            "caption": "dei ricavi da {{n}} clienti su {{total}}"
+        },
+        "hero": {
+            "title": "Fatturato {{title}}",
+            "versus": "rispetto a {{compare}}",
+            "description": "Fatturato mensile {{period}} confrontato con {{compareYear}}: {{value}} contro {{previous}} in {{compare}}. Mese più alto {{max}} ({{maxValue}}), più basso {{min}} ({{minValue}})."
+        },
+        "costsTitle": "Costi per categoria"
+    },
+    "revenue": {
+        "monthly": {
+            "title": "Fatturato mensile",
+            "subtitle": "{{period}} confrontato con {{compare}}",
+            "description": "Fatturato mensile {{year}} e {{compareYear}}: {{parts}}.",
+            "part": "{{month}} {{current}} contro {{previous}}"
+        },
+        "byArea": "Ricavi per area geografica",
+        "byLine": {
+            "title": "Ricavi per linea di prodotto",
+            "description": "Ricavi mensili per linea di prodotto, {{period}}: {{items}}.",
+            "total": "Totale {{value}}"
+        },
+        "seasonality": {
+            "title": "Stagionalità",
+            "subtitle": "Fatturato mensile, {{from}}–{{to}}",
+            "description": "Stagionalità del fatturato mensile, anni {{years}} sovrapposti. {{parts}}.",
+            "part": "{{year}}: massimo a {{max}}, minimo a {{min}}"
+        },
+        "topClients": {
+            "title": "Top {{n}} clienti",
+            "region": "Top {{n}} clienti, scorribile",
+            "caption": "Top {{n}} clienti per fatturato, {{period}}, con variazione rispetto a {{compare}}",
+            "client": "Cliente",
+            "revenue": "Fatturato",
+            "share": "Quota",
+            "change": "Variazione",
+            "lastInvoice": "Ultima fattura",
+            "new": "Nuovo"
+        }
+    },
+    "forecastBars": {
+        "scheduled": "Da scadenzario",
+        "estimate": "Stima",
+        "threshold": "Soglia minima",
+        "description": "Liquidità prevista {{range}}: {{months}}. {{scheduled}} da scadenzario, poi stima. Minimo a {{min}}.",
+        "descriptionThreshold": "Liquidità prevista {{range}}: {{months}}. {{scheduled}} da scadenzario, poi stima. Minimo a {{min}}, soglia minima {{threshold}}."
+    },
+    "insights": {
+        "phrases": {
+            "personale": "il costo del personale",
+            "materie": "le materie prime",
+            "struttura": "i costi di struttura",
+            "logistica": "la logistica",
+            "marketing": "il marketing"
+        },
+        "cause": {
+            "category": "{{phrase}} ({{change}})",
+            "line": {
+                "componenti": "il margine dei {{label}}, {{atPct}}",
+                "assemblaggi": "il margine degli {{label}}, {{atPct}}",
+                "assistenza": "il margine dell'{{label}}, {{atPct}}"
+            }
+        },
+        "revenue": {
+            "up": "Fatturato in crescita {{ofPct}} rispetto a {{compare}}",
+            "down": "Fatturato in calo {{ofPct}} rispetto a {{compare}}"
+        },
+        "ebitda": {
+            "same": {
+                "up": " e l'EBITDA sale {{ofPct}}",
+                "down": " e l'EBITDA scende {{ofPct}}"
+            },
+            "but": {
+                "up": ", ma l'EBITDA sale {{ofPct}}",
+                "down": ", ma l'EBITDA scende {{ofPct}}"
+            }
+        },
+        "reasons": {
+            "watch": "Da tenere d'occhio {{list}}.",
+            "weigh_one": "Pesa {{list}}.",
+            "weigh_other": "Pesano {{list}}."
+        },
+        "grossMargin": "Margine lordo {{atPct}} ({{points}}).",
+        "alerts": {
+            "forecast": {
+                "subject": "Liquidità prevista",
+                "below": "sotto la soglia di {{threshold}} a {{month}} ({{balance}})",
+                "near": "minimo di {{balance}} a {{month}}, vicino alla soglia di {{threshold}}"
+            },
+            "overdue": "{{invoices}} da oltre {{days}} giorni ({{amount}})",
+            "cost": "costi {{change}} rispetto a {{compare}}",
+            "costWithAmount": "costi {{change}} rispetto a {{compare}} ({{amount}})",
+            "lineMargin": "margine lordo {{atPct}} ({{previous}} in {{compare}})",
+            "lineMarginChange": "margine lordo {{atPct}}, {{points}} rispetto a {{compare}}",
+            "concentration": {
+                "subject": "Concentrazione clienti",
+                "text": "il {{pct}} dei ricavi viene da {{n}} clienti su {{total}}"
+            },
+            "summerClosure": "fatturato {{pct}} sulla media degli altri mesi del periodo: chiusura estiva",
+            "dso": {
+                "subject": "Tempi di incasso",
+                "text": "DSO a {{dso}} ({{diff}} rispetto a {{compare}})"
+            },
+            "clientMargin": {
+                "subject": "Margine per cliente",
+                "text": "{{clients}} sotto il {{floor}} di margine, per {{revenue}} di fatturato"
+            },
+            "personnel": {
+                "subject": "Personale",
+                "text": "incidenza {{atPct}} del fatturato ({{points}})"
+            },
+            "ebitda": {
+                "subject": "EBITDA",
+                "text": "{{atPct}} del fatturato ({{points}} rispetto a {{compare}})"
+            },
+            "noCostAlerts": {
+                "subject": "Costi sotto controllo",
+                "text": "nessuna categoria cresce più del {{pct}} rispetto a {{compare}}"
+            }
+        }
+    }
+}

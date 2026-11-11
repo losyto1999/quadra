@@ -1,0 +1,215 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/manrope';
+
+/* Token della palette: l'unico posto in cui compaiono i colori, sulla radice dell'app. Le utility li
+   leggono con @theme inline (bg-accent → var(--q-accent)); i grafici Recharts li usano direttamente
+   negli attributi SVG (fill="var(--q-accent)"). */
+.quadra-root {
+    --q-bg: #ECEEF5; /* fondo pagina */
+    --q-surface: #FFFFFF; /* card */
+    --q-ink: #1E1B3A; /* testo principale, card scura "hero", voce di nav attiva */
+    --q-muted: #5A5E75; /* testo secondario, label (mai sotto i 12px) */
+    --q-accent: #5B4BDB; /* colore primario */
+    --q-accent-soft: #9E95F0; /* serie secondarie nei grafici */
+    --q-lime: #C6F05A; /* insight, badge sulla card scura, serie dell'anno su fondo scuro */
+    --q-chip: #F1F0FB; /* controlli non attivi, chip */
+    --q-track: #E3E4EE; /* tracce, griglie, "altro" */
+    --q-positive: #0F6B45; /* variazioni favorevoli */
+    --q-negative: #B42318; /* variazioni sfavorevoli */
+    --q-alert-red: #FDEDEA; /* avviso critico */
+    --q-alert-amber: #FFF3DC; /* avviso medio */
+    --q-alert-info: #F1F0FB; /* avviso informativo */
+
+    /* Aggiunti alla specifica. Card scura: anno precedente, griglia, etichette. */
+    --q-hero-prev: #8C88B8;
+    --q-hero-grid: #34305A;
+    --q-hero-label: #B5B1DA;
+    /* Anni più lontani nella stagionalità. */
+    --q-lavender-pale: #D4D2E8;
+    /* Fascia 61–90 giorni dello scadenzario. */
+    --q-amber: #E0A458;
+    /* Fondo verde e testo ambra dei chip, per avere testo a contrasto ≥ 4,5:1. */
+    --q-positive-soft: #E3F2EA;
+    --q-amber-ink: #8A5300;
+}
+
+@theme {
+    /* Niente palette di Tailwind: un bg-slate-100 scritto per sbaglio non produce stile. */
+    --color-*: initial;
+    --color-white: #FFFFFF;
+
+    --font-sans: 'Manrope Variable', system-ui, sans-serif;
+
+    /* Raggi della specifica: card grandi, card KPI, barra filtri, avvisi, controlli (le pillole sono rounded-full). */
+    --radius-card: 24px;
+    --radius-kpi: 20px;
+    --radius-bar: 18px;
+    --radius-alert: 14px;
+    --radius-control: 12px;
+
+    /* Corpi oltre a text-xs (12px), text-sm (14px) e text-base (16px). Interlinea unica, quella della
+       radice (1.45): dove serve diversa la danno le classi leading-*. */
+    --text-xs--line-height: 1.45;
+    --text-sm--line-height: 1.45;
+    --text-base--line-height: 1.45;
+    --text-label: 13px;
+    --text-body: 15px;
+    --text-brand: 22px;
+    --text-kpi: 26px;
+    --text-big: 40px;
+    --text-hero: 46px;
+
+    /* La card raggiunta da una KpiCard si evidenzia per un attimo (vedi useScrollToHash). */
+    --animate-highlight: highlight 1.8s ease-out forwards;
+
+    @keyframes highlight {
+        60% {
+            outline-color: var(--q-accent-soft);
+        }
+        100% {
+            outline-color: transparent;
+        }
+    }
+}
+
+@theme inline {
+    --color-bg: var(--q-bg);
+    --color-surface: var(--q-surface);
+    --color-ink: var(--q-ink);
+    --color-muted: var(--q-muted);
+    --color-accent: var(--q-accent);
+    --color-accent-soft: var(--q-accent-soft);
+    --color-lime: var(--q-lime);
+    --color-chip: var(--q-chip);
+    --color-track: var(--q-track);
+    --color-positive: var(--q-positive);
+    --color-negative: var(--q-negative);
+    --color-alert-red: var(--q-alert-red);
+    --color-alert-amber: var(--q-alert-amber);
+    --color-alert-info: var(--q-alert-info);
+    --color-hero-prev: var(--q-hero-prev);
+    --color-hero-grid: var(--q-hero-grid);
+    --color-hero-label: var(--q-hero-label);
+    --color-lavender-pale: var(--q-lavender-pale);
+    --color-amber: var(--q-amber);
+    --color-positive-soft: var(--q-positive-soft);
+    --color-amber-ink: var(--q-amber-ink);
+}
+
+/* Il riferimento è il desktop: le classi senza prefisso valgono da lì in giù, queste le adattano.
+   Ognuna è definita dopo la più larga, così vince su di lei. tablet: (≤ 1180px) è dove la nav scende
+   sotto la scritta; compact: (< 900px) è la colonna singola; small: (< 640px) è il telefono. */
+@custom-variant medium (@media (width <= 1280px));
+@custom-variant tablet (@media (width <= 1180px));
+@custom-variant compact (@media (width < 900px));
+@custom-variant small (@media (width < 640px));
+
+/* Freccia della select disegnata in SVG: con appearance: none quella del sistema sparisce. */
+@utility select-chevron {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%231e1b3a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+}
+
+@layer base {
+    .quadra-root {
+        min-height: 100vh;
+        background-color: var(--q-bg);
+        color: var(--q-ink);
+        font-family: var(--font-sans);
+        font-size: var(--text-body);
+        line-height: 1.45;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .quadra-root :focus-visible {
+        outline: 2px solid var(--q-accent);
+        outline-offset: 2px;
+    }
+
+    .quadra-root ::selection {
+        background-color: var(--q-accent-soft);
+        color: var(--q-ink);
+    }
+
+    /* Recharts: cifre incolonnate sugli assi, punti e tooltip non tagliati ai bordi del grafico. */
+    .quadra-root .recharts-cartesian-axis-tick text {
+        font-variant-numeric: tabular-nums;
+    }
+
+    .quadra-root .recharts-surface {
+        overflow: visible;
+    }
+
+    /* Un clic nel grafico mette il focus sul wrapper/superficie SVG di Recharts e il browser disegna il bordo nero di
+       default. I grafici sono role="img" senza elementi interattivi (accessibilityLayer spento): niente da evidenziare. */
+    .quadra-root .recharts-wrapper,
+    .quadra-root .recharts-wrapper :focus,
+    .quadra-root .recharts-wrapper :focus-visible {
+        outline: none;
+    }
+}
+
+/* Select personalizzabile (Chrome/Edge): il menu aperto segue lo stile dei pulsanti, con angoli arrotondati e voce
+   attiva in colore primario. Dove non è supportato resta il menu nativo, con la freccia in SVG di select-chevron.
+   Fuori dai layer di proposito: deve battere le utility di Tailwind (padding, sfondo) sul select. */
+@supports (appearance: base-select) {
+    .quadra-root .quadra-select,
+    .quadra-root .quadra-select::picker(select) {
+        appearance: base-select;
+    }
+
+    .quadra-root .quadra-select {
+        display: flex;
+        align-items: center;
+        padding-top: 0;
+        padding-bottom: 0;
+        background-image: none;
+        padding-right: 14px;
+    }
+
+    .quadra-root .quadra-select::picker-icon {
+        margin-left: auto;
+        color: var(--q-ink);
+        transition: rotate 0.2s;
+    }
+
+    .quadra-root .quadra-select:open::picker-icon {
+        rotate: 180deg;
+    }
+
+    .quadra-root .quadra-select::picker(select) {
+        margin-top: 6px;
+        padding: 6px;
+        border: 0;
+        border-radius: 12px;
+        background: var(--q-surface);
+        box-shadow: 0 12px 32px -8px rgb(30 27 58 / 0.25), 0 0 0 1px var(--q-track);
+    }
+
+    .quadra-root .quadra-select option {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 12px;
+        border-radius: 8px;
+        font: inherit;
+        font-weight: 600;
+        color: var(--q-ink);
+        cursor: pointer;
+    }
+
+    .quadra-root .quadra-select option:hover,
+    .quadra-root .quadra-select option:focus-visible {
+        background: var(--q-chip);
+    }
+
+    .quadra-root .quadra-select option:checked {
+        background: var(--q-accent);
+        color: #fff;
+    }
+
+    .quadra-root .quadra-select option::checkmark {
+        display: none;
+    }
+}

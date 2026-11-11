@@ -1,0 +1,340 @@
+{
+    "header": {
+        "note": "demo data",
+        "language": "Language"
+    },
+    "pages": {
+        "overview": "Overview",
+        "revenue": "Revenue",
+        "costs": "Costs & margins",
+        "cash": "Cash"
+    },
+    "nav": {
+        "label": "Quadra sections"
+    },
+    "periods": {
+        "full": "Full year",
+        "h1": "First half",
+        "h2": "Second half",
+        "yearToDate": "year to date"
+    },
+    "lines": {
+        "componenti": "Mechanical components",
+        "assemblaggi": "Custom assemblies",
+        "assistenza": "Technical service"
+    },
+    "categories": {
+        "personale": "Personnel",
+        "materie": "Raw materials",
+        "struttura": "Overheads",
+        "logistica": "Logistics",
+        "marketing": "Marketing"
+    },
+    "areas": {
+        "nord": "North",
+        "centro": "Centre",
+        "sud": "South",
+        "estero": "Abroad"
+    },
+    "aging": {
+        "range": "{{from}}–{{to}} days",
+        "over": "Over {{days}} days"
+    },
+    "kpis": {
+        "revenue": "Revenue",
+        "activeClients": "Active clients",
+        "avgRevenue": "Average revenue per client",
+        "top3Share": "Top {{n}} clients share",
+        "totalCosts": "Total costs",
+        "grossMargin": "Gross margin %",
+        "ebitda": "EBITDA",
+        "personnelRatio": "Personnel cost ratio",
+        "liquidity": "Liquidity",
+        "dso": "DSO (days)",
+        "dpo": "DPO (days)",
+        "overdue": "Overdue receivables"
+    },
+    "kpiNotes": {
+        "ebitdaShare": "{{pct}} of revenue",
+        "liquidityNow": "Current liquidity",
+        "liquidityAt": "Liquidity at {{date}}"
+    },
+    "kpiCard": {
+        "detail": ". Details in {{page}}"
+    },
+    "common": {
+        "na": "n/a"
+    },
+    "table": {
+        "total": "Total"
+    },
+    "counts": {
+        "invoices_one": "{{value}} invoice",
+        "invoices_other": "{{value}} invoices",
+        "overdueInvoices_one": "{{value}} overdue invoice",
+        "overdueInvoices_other": "{{value}} overdue invoices",
+        "clients_one": "{{value}} client",
+        "clients_other": "{{value}} clients"
+    },
+    "format": {
+        "days_one": "{{value}} day",
+        "days_other": "{{value}} days",
+        "daysShort": "d",
+        "delta": {
+            "relative": "by {{value}}",
+            "points": "by {{value}} percentage points",
+            "days": "by {{value}}",
+            "count": "by {{value}}"
+        }
+    },
+    "delta": {
+        "noneSr": " (no comparison with {{compare}})",
+        "unchanged": "unchanged compared with {{compare}}",
+        "up": "up",
+        "down": "down",
+        "favorable": "favourable",
+        "unfavorable": "unfavourable",
+        "spoken": "{{direction}} {{change}} compared with {{compare}}, {{tone}}"
+    },
+    "alerts": {
+        "title": "Alerts",
+        "costTitle": "Cost alerts",
+        "severity": {
+            "critical": "Critical",
+            "warning": "Warning",
+            "info": "Good to know"
+        }
+    },
+    "errors": {
+        "title": "Data unavailable",
+        "unavailable": "The data for this page couldn’t be loaded. Please try again in a moment.",
+        "invalidFilters": "The requested filters aren’t valid: choose a year and period from the bar above.",
+        "retry": "Try again"
+    },
+    "insight": {
+        "title": "Insight"
+    },
+    "filters": {
+        "label": "Filters",
+        "year": "Year",
+        "yearToDate": "{{year}} (year to date)",
+        "period": "Period",
+        "notStarted": {
+            "full": "The full year {{year}} hasn't started yet",
+            "h1": "The first half of {{year}} hasn't started yet",
+            "h2": "The second half of {{year}} hasn't started yet"
+        },
+        "hint": "Period not started yet: there are no closed months.",
+        "compare": "Compared with {{label}}",
+        "invalid": {
+            "year": "The year “{{value}}” in the link isn’t available (data from {{from}} to {{to}}): showing {{year}}.",
+            "period": "The period “{{value}}” in the link isn’t available for {{year}}: showing the full year.",
+            "dismiss": "Dismiss"
+        }
+    },
+    "donut": {
+        "total": "Total",
+        "description": "{{subject}}, total {{total}}: {{items}}"
+    },
+    "cash": {
+        "flows": {
+            "title": "Monthly inflows and outflows",
+            "inflows": "Inflows",
+            "outflows": "Outflows",
+            "net": "Net for the month",
+            "inflowsLower": "inflows",
+            "outflowsLower": "outflows",
+            "netLower": "net",
+            "description": "Monthly inflows and outflows, {{period}}: inflows {{inflow}}, outflows {{outflow}}, net {{net}}. Lowest net in {{month}} ({{worst}})."
+        },
+        "forecastHero": {
+            "title": "Forecast liquidity",
+            "titleWithRange": "Forecast liquidity · {{range}}",
+            "low": "forecast low",
+            "lowDetail": "forecast low, in {{month}} · minimum threshold {{threshold}}"
+        },
+        "overdue": {
+            "title": "Overdue invoices",
+            "subtitle": "As at {{date}} · {{count}}",
+            "subtitleLoading": "As at {{date}}",
+            "region": "Overdue invoices, scrollable",
+            "caption": "Overdue invoices as at {{date}}, most overdue first",
+            "client": "Client",
+            "number": "Invoice no.",
+            "amount": "Amount",
+            "daysLate": "Days overdue",
+            "due": "Due date",
+            "total": "Total",
+            "empty": "No overdue invoices at this date."
+        },
+        "aging": {
+            "title": "Receivables ageing by band",
+            "subtitle": "Overdue receivables as at {{date}}, by days overdue",
+            "description": "Overdue receivables as at {{date}} by days overdue: {{items}}."
+        }
+    },
+    "costs": {
+        "bubble": {
+            "title": "Revenue and margin by client",
+            "subtitle": "{{period}} · revenue on a logarithmic scale",
+            "legendHigh": "Margin from {{floor}} up",
+            "legendLow": "Margin below {{floor}}",
+            "size": "Size: number of orders",
+            "revenue": "revenue",
+            "margin": "gross margin",
+            "orders": "orders",
+            "description": "Revenue and gross margin of {{count}} clients, {{period}}. ",
+            "lowList": "Below {{floor}} margin: {{list}}.",
+            "none": "No client below {{floor}} margin."
+        },
+        "byCategory": {
+            "title": "Costs by category",
+            "subtitle": "{{period}} compared with {{compare}}",
+            "description": "Costs by category, {{period}} versus {{compare}}: {{items}}.",
+            "change": "Change {{change}}"
+        },
+        "composition": "Cost breakdown",
+        "lineMargin": {
+            "title": "Margin by product line",
+            "region": "Margin by product line, scrollable",
+            "caption": "Gross margin by product line, {{period}}",
+            "line": "Line",
+            "revenue": "Revenue",
+            "directCosts": "Direct costs",
+            "margin": "Margin %",
+            "footnote": "Margin: {{good}} and above is good, {{low}} to {{good}} needs watching, below {{low}} is low."
+        }
+    },
+    "overview": {
+        "forecast": {
+            "title": "Forecast liquidity",
+            "subtitle": "Next {{months}} months · {{range}}",
+            "subtitleLoading": "Next {{months}} months",
+            "low": "Forecast low in {{month}}:"
+        },
+        "concentration": {
+            "title": "Client concentration",
+            "others": "Other clients",
+            "description": "Share of revenue: {{items}}",
+            "caption": "of revenue from {{n}} clients out of {{total}}"
+        },
+        "hero": {
+            "title": "Revenue {{title}}",
+            "versus": "compared with {{compare}}",
+            "description": "Monthly revenue {{period}} compared with {{compareYear}}: {{value}} versus {{previous}} in {{compare}}. Highest month {{max}} ({{maxValue}}), lowest {{min}} ({{minValue}})."
+        },
+        "costsTitle": "Costs by category"
+    },
+    "revenue": {
+        "monthly": {
+            "title": "Monthly revenue",
+            "subtitle": "{{period}} compared with {{compare}}",
+            "description": "Monthly revenue {{year}} and {{compareYear}}: {{parts}}.",
+            "part": "{{month}} {{current}} versus {{previous}}"
+        },
+        "byArea": "Revenue by region",
+        "byLine": {
+            "title": "Revenue by product line",
+            "description": "Monthly revenue by product line, {{period}}: {{items}}.",
+            "total": "Total {{value}}"
+        },
+        "seasonality": {
+            "title": "Seasonality",
+            "subtitle": "Monthly revenue, {{from}}–{{to}}",
+            "description": "Seasonality of monthly revenue, years {{years}} overlaid. {{parts}}.",
+            "part": "{{year}}: peak in {{max}}, low in {{min}}"
+        },
+        "topClients": {
+            "title": "Top {{n}} clients",
+            "region": "Top {{n}} clients, scrollable",
+            "caption": "Top {{n}} clients by revenue, {{period}}, with change compared with {{compare}}",
+            "client": "Client",
+            "revenue": "Revenue",
+            "share": "Share",
+            "change": "Change",
+            "lastInvoice": "Last invoice",
+            "new": "New"
+        }
+    },
+    "forecastBars": {
+        "scheduled": "From schedule",
+        "estimate": "Estimate",
+        "threshold": "Minimum threshold",
+        "description": "Forecast liquidity {{range}}: {{months}}. {{scheduled}} from the schedule, then estimates. Low point in {{min}}.",
+        "descriptionThreshold": "Forecast liquidity {{range}}: {{months}}. {{scheduled}} from the schedule, then estimates. Low point in {{min}}, minimum threshold {{threshold}}."
+    },
+    "insights": {
+        "phrases": {
+            "personale": "personnel costs",
+            "materie": "raw materials",
+            "struttura": "overheads",
+            "logistica": "logistics",
+            "marketing": "marketing"
+        },
+        "cause": {
+            "category": "{{phrase}} ({{change}})",
+            "line": {
+                "componenti": "the margin on {{label}}, at {{pct}}",
+                "assemblaggi": "the margin on {{label}}, at {{pct}}",
+                "assistenza": "the margin on {{label}}, at {{pct}}"
+            }
+        },
+        "revenue": {
+            "up": "Revenue up {{pct}} compared with {{compare}}",
+            "down": "Revenue down {{pct}} compared with {{compare}}"
+        },
+        "ebitda": {
+            "same": {
+                "up": " and EBITDA rises {{pct}}",
+                "down": " and EBITDA falls {{pct}}"
+            },
+            "but": {
+                "up": ", but EBITDA rises {{pct}}",
+                "down": ", but EBITDA falls {{pct}}"
+            }
+        },
+        "reasons": {
+            "watch": "Worth keeping an eye on: {{list}}.",
+            "weigh_one": "Weighing on it: {{list}}.",
+            "weigh_other": "Weighing on it: {{list}}."
+        },
+        "grossMargin": "Gross margin at {{pct}} ({{points}}).",
+        "alerts": {
+            "forecast": {
+                "subject": "Forecast liquidity",
+                "below": "below the {{threshold}} threshold in {{month}} ({{balance}})",
+                "near": "low of {{balance}} in {{month}}, close to the {{threshold}} threshold"
+            },
+            "overdue": "{{invoices}} more than {{days}} days late ({{amount}})",
+            "cost": "costs {{change}} compared with {{compare}}",
+            "costWithAmount": "costs {{change}} compared with {{compare}} ({{amount}})",
+            "lineMargin": "gross margin at {{pct}} ({{previous}} in {{compare}})",
+            "lineMarginChange": "gross margin at {{pct}}, {{points}} compared with {{compare}}",
+            "concentration": {
+                "subject": "Client concentration",
+                "text": "{{pct}} of revenue comes from {{n}} clients out of {{total}}"
+            },
+            "summerClosure": "revenue {{pct}} against the average of the other months in the period: summer shutdown",
+            "dso": {
+                "subject": "Collection times",
+                "text": "DSO at {{dso}} ({{diff}} compared with {{compare}})"
+            },
+            "clientMargin": {
+                "subject": "Margin by client",
+                "text": "{{clients}} below {{floor}} margin, accounting for {{revenue}} of revenue"
+            },
+            "personnel": {
+                "subject": "Personnel",
+                "text": "personnel cost at {{pct}} of revenue ({{points}})"
+            },
+            "ebitda": {
+                "subject": "EBITDA",
+                "text": "{{pct}} of revenue ({{points}} compared with {{compare}})"
+            },
+            "noCostAlerts": {
+                "subject": "Costs under control",
+                "text": "no category grew by more than {{pct}} compared with {{compare}}"
+            }
+        }
+    }
+}
