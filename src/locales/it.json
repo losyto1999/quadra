@@ -1,12 +1,19 @@
 {
     "header": {
         "note": "dati dimostrativi",
-        "language": "Lingua"
+        "language": "Lingua",
+        "switchTo": "Passa a {{lang}}"
     },
     "pages": {
         "overview": "Panoramica",
         "revenue": "Ricavi",
         "costs": "Costi e margini",
+        "cash": "Cassa"
+    },
+    "pagesShort": {
+        "overview": "Panoramica",
+        "revenue": "Ricavi",
+        "costs": "Costi",
         "cash": "Cassa"
     },
     "nav": {

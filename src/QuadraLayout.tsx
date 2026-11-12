@@ -26,7 +26,7 @@ export function QuadraLayout() {
     }, [location.pathname, location.hash, navigationType])
 
     return (
-        <div className="quadra-root px-8 py-7 small:px-4">
+        <div className="quadra-root px-8 py-7 small:px-4 small:pb-[calc(6.5rem+env(safe-area-inset-bottom))]">
             {showBack && <BackToPortfolio />}
             <div className="mx-auto flex max-w-[1320px] flex-col gap-4">
                 <QuadraHeader />

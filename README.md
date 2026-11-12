@@ -25,18 +25,18 @@ Dashboard di analisi dati per un'azienda immaginaria, **Officine Rossetti S.r.l.
 - **Grafici** con legenda, tooltip e una descrizione per i lettori di schermo costruita dai dati.
 - **Caricamento visibile**: a ogni cambio di filtro o di lingua le card mostrano uno skeleton finché l'API non risponde. Se la risposta fallisce, la pagina mostra l'errore e un pulsante «Riprova».
 - **Italiano e inglese** con un selettore nell'header. La scelta resta salvata nel browser. Testi, grafici, valute e date cambiano subito, senza ricaricare la pagina.
-- **Responsive**, da 320px in su: sotto i 900px le card vanno in colonna e le tabelle scorrono in orizzontale.
+- **Responsive**, da 320px in su: sotto i 900px le card vanno in colonna e le tabelle scorrono in orizzontale. Sul telefono (sotto i 640px) la navigazione è una pillola fissa in basso, a portata di pollice, e la lingua un solo tasto nell'header.
 - **Accessibile**: contrasti WCAG AA, variazioni comunicate anche da frecce e testo, grafici con descrizione, animazioni spente con «riduci movimento» attivo nel sistema.
 
 | Costi e margini | Cassa |
 |---|---|
 | ![Costi per categoria, composizione, margine per linea e per cliente, avvisi](docs/screenshots/costi.png) | ![Liquidità prevista, entrate e uscite, scadenzario e fatture scadute](docs/screenshots/cassa.png) |
 
-![Versione mobile in italiano e in inglese](docs/screenshots/mobile.png)
+![Versione mobile in italiano e in inglese, con la navigazione fissa in basso](docs/screenshots/mobile.png)
 
 ## Tecnologie
 
-[React 19](https://react.dev) · [TypeScript](https://www.typescriptlang.org) · [Vite](https://vite.dev) · [React Router](https://reactrouter.com) · [Tailwind CSS 4](https://tailwindcss.com) · [Recharts](https://recharts.org) · [i18next](https://www.i18next.com) · [Lucide](https://lucide.dev) · [oxlint](https://oxc.rs)
+[React 19](https://react.dev) · [TypeScript](https://www.typescriptlang.org) · [Vite](https://vite.dev) · [React Router](https://reactrouter.com) · [Tailwind CSS 4](https://tailwindcss.com) · [Recharts](https://recharts.org) · [Motion](https://motion.dev) · [i18next](https://www.i18next.com) · [Lucide](https://lucide.dev) · [oxlint](https://oxc.rs)
 
 ## Avvio
 
@@ -86,7 +86,7 @@ src/
   main.tsx                 punto di ingresso: stile, i18n, router e App
   App.tsx                  rotte: /, /ricavi, /costi, /cassa
   QuadraLayout.tsx         header, barra dei filtri e pagina
-  quadra.css               Tailwind con il tema (token, raggi, corpi, varianti responsive)
+  quadra.css               Tailwind con il tema (token, raggi, corpi, varianti responsive, rilievo della nav mobile)
   routes.ts                percorsi e id delle sezioni (gli hash a cui portano le KPI)
   api/
     dashboard.ts           API simulata: i dati delle quattro pagine, InvalidFiltersError
@@ -129,7 +129,7 @@ La demo fa parte del portfolio [flowsi.it](https://flowsi.it), che la apre con i
 
 - `fromPortfolio.ts`, importato in `main.tsx` prima del render, salva il segnale nel `sessionStorage` (chiave `portfolio:back`) e toglie `from` dall'URL. Così la pillola resta navigando tra le pagine della scheda, ma un link copiato non la porta con sé. Mette anche l'attributo `data-portfolio-back` su `<html>`.
 - `BackToPortfolio.tsx` è la pillola, con i testi IT/EN al suo interno. Riporta sempre a `https://flowsi.it/#progetti`: l'indirizzo è fisso nel codice e non letto dall'URL, così nessuno può usarla per mandare altrove.
-- Le classi con la variante `back:` (definita nel foglio di stile) valgono solo con quell'attributo: nell'header lasciano spazio alla pillola.
+- Le classi con la variante `back:` (definita nel foglio di stile) valgono solo con quell'attributo: nell'header lasciano spazio alla pillola, ma solo alla riga della scritta. La navigazione sta su un'altra riga (o in basso, sul telefono) e non la incontra.
 
 ## Pubblicazione su GitHub Pages
 
@@ -155,14 +155,14 @@ La lingua si può cambiare in qualsiasi momento. Per questo nessun testo o forma
 
 ### Direzione visiva
 
-L'aspetto è quello di uno strumento di lavoro, sobrio: card bianche su fondo grigio-lavanda, nessuna ombra. Separa solo il contrasto tra le card e il fondo.
+L'aspetto è quello di uno strumento di lavoro, sobrio: card bianche su fondo grigio-lavanda, nessuna ombra. Separa solo il contrasto tra le card e il fondo. L'unica eccezione è la navigazione fissa sul telefono.
 
 - **Card scure («hero»)**: il fatturato nella Panoramica e la liquidità prevista in Cassa, con il numero grande.
 - **Evidenze**: una card lime per l'insight.
-- **Navigazione e lingua**: a pillole, con la voce attiva scura.
+- **Navigazione e lingua**: a pillole, con la voce attiva scura che scorre da una voce all'altra quando si cambia pagina (ferma con «riduci movimento»). Sotto i 640px la navigazione diventa una pillola fissa in basso, lunga quanto la riga, con icona e nome corto per voce, e la lingua un solo tasto con il codice della lingua a cui si passa. La pillola ha un leggero rilievo (gradiente, luce in alto e ombre a più strati, vedi `nav-3d` in `quadra.css`) per staccarsi dalle card che le scorrono sotto.
 - **Grafici**: griglia solo orizzontale, niente linee d'asse, linee spesse 3–3,5px, anno precedente tratteggiato, legenda HTML sopra il grafico e tooltip personalizzato. Su mobile, con più di sei mesi, l'asse mostra solo l'iniziale del mese.
 
-Da evitare: emoji, gradienti decorativi, ombre.
+Da evitare: emoji, gradienti decorativi, ombre. Fa eccezione solo il rilievo della navigazione mobile, che è un controllo e non una decorazione.
 
 ### Raggi e spaziature
 
@@ -180,7 +180,7 @@ Da evitare: emoji, gradienti decorativi, ombre.
 - contenitore largo al massimo 1320px;
 - pagina con 28px in verticale e 32px in orizzontale (16px sotto i 640px).
 
-Le varianti responsive vanno dal desktop in giù: `medium:` (≤ 1280px), `tablet:` (≤ 1180px, la nav scende sotto la scritta), `compact:` (< 900px, colonna singola), `small:` (< 640px, telefono).
+Le varianti responsive vanno dal desktop in giù: `medium:` (≤ 1280px), `tablet:` (≤ 1180px, la nav scende sotto la scritta), `compact:` (< 900px, colonna singola), `small:` (< 640px, telefono: la nav è una pillola fissa in basso).
 
 ### Palette (`quadra.css`)
 
@@ -190,7 +190,7 @@ I colori sono custom properties `--q-*` su `.quadra-root`. Le utility li leggono
 |---|---|---|
 | `--q-bg` | `#ECEEF5` | fondo pagina |
 | `--q-surface` | `#FFFFFF` | card |
-| `--q-ink` | `#1E1B3A` | testo, card scura, voce attiva di nav e lingua |
+| `--q-ink` | `#1E1B3A` | testo, card scura, voce attiva di nav e lingua (le ombre della nav mobile ne usano l'RGB) |
 | `--q-muted` | `#5A5E75` | testo secondario, etichette (mai sotto i 12px) |
 | `--q-accent` | `#5B4BDB` | colore primario |
 | `--q-accent-soft` | `#9E95F0` | serie secondarie (anno precedente, stima) |

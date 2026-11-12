@@ -1,12 +1,19 @@
 {
     "header": {
         "note": "demo data",
-        "language": "Language"
+        "language": "Language",
+        "switchTo": "Switch to {{lang}}"
     },
     "pages": {
         "overview": "Overview",
         "revenue": "Revenue",
         "costs": "Costs & margins",
+        "cash": "Cash"
+    },
+    "pagesShort": {
+        "overview": "Overview",
+        "revenue": "Revenue",
+        "costs": "Costs",
         "cash": "Cash"
     },
     "nav": {
