@@ -26,7 +26,7 @@ jobs:
 
             - uses: actions/setup-node@v5
               with:
-                  node-version: 22
+                  node-version: 24
                   cache: npm
 
             - run: npm ci
@@ -37,7 +37,7 @@ jobs:
             # è una copia della pagina, così il router dell'app apre la pagina giusta anche da un link diretto.
             - run: cp dist/index.html dist/404.html
 
-            - uses: actions/upload-pages-artifact@v4
+            - uses: actions/upload-pages-artifact@v5
               with:
                   path: dist
 
@@ -49,4 +49,4 @@ jobs:
             url: ${{ steps.deployment.outputs.page_url }}
         steps:
             - id: deployment
-              uses: actions/deploy-pages@v4
+              uses: actions/deploy-pages@v5
